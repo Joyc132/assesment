@@ -1,18 +1,10 @@
-pipeline { 
-  agent any 
-  stages {
-    stage ('git clone') {
-      steps {
-        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Joyc132/assesment.git']]])
-      }
+pipeline {
+    agent any
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
     }
-    stage ('demo') {
-      steps {
-        sh'''
-        test=hi
-        echo $test
-        '''
-      }
-    }
-  }
 }
